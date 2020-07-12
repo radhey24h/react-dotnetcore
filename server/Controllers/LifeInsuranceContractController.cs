@@ -86,8 +86,7 @@ namespace server.Controllers
                 try
                 {
                     LifeInsuranceContract lifeInsuranceContract = new LifeInsuranceContract();
-                    CoveragePlanAndRates coveragePlanAndRates = new CoveragePlanAndRates();
-                    lifeInsuranceContract = coveragePlanAndRates.GetCoveragePlanAndRates(model);
+                    CoveragePlanAndRates coveragePlanAndRates = new CoveragePlanAndRates(_coveragePlanRepository, _rateChartRepository);
                     await _lifeInsuranceRepository.UpdateLifeInsuranceContract(lifeInsuranceContract);
 
                     return Ok();
