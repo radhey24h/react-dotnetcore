@@ -15,6 +15,7 @@ class InQuickerServices extends Component {
     }
 
     handleClick() {
+        //need to impliment one more action and reducer 
         console.log()
     }
 
