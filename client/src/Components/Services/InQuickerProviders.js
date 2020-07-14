@@ -35,25 +35,26 @@ export class InQuickerProviders extends Component {
         }
 
         return (<>
-            <div className="panel" >
-                <div className="sidebar" >
-                    <h2 className="heading"> Quicker Provider </h2>
-                    <List disablePadding dense > {
-                        this.state.inquickerstaging.map(item =>
-                            <ListItem button onClick={this.handleClick.bind(this)} key={Math.random()} >
-                                <ListItemIcon >
-                                    <IconDashboard />
-                                </ListItemIcon>
-                                <ListItemText primary={item.id} />
-                            </ListItem>
-                        )
-                    }
-                    </List>
-                </div>
-                <div className="content-panel" >
-                    {quickerStagingDetails()}
-                </div>
+
+            <h2 className="heading"> Quicker Provider </h2>
+
+            <div disablePadding dense > {
+                this.state.inquickerstaging.map(item =>
+                    <div className="provider-grid" key={Math.random()}>
+                        <div className="provider-img">
+                            <img src={item.attributes['card-image']} />
+                        </div>
+
+                        <div className="provider-content">
+                            <h4>{item.attributes.name} </h4>
+                            <br />
+                            <h4>{item.attributes['provider-type']} </h4>
+                        </div>
+                    </div>
+                )
+            }
             </div>
+
         </>)
     }
 }

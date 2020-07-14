@@ -31,4 +31,16 @@
     background-color: rgb(5, 5, 95);
     margin:1px;
 }
-  
+.provider-grid{
+    display:flex;
+}
+.provider-img{
+    flex: 35%;
+    text-align: right;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.provider-content{
+    flex: 65%;
+    padding:10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
