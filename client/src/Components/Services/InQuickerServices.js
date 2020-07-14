@@ -19,10 +19,8 @@ class InQuickerServices extends Component {
     }
 
     render() {
-
         const { error, loading, quickerServices } = this.props;
-        //console.log(this.props)
-
+        
         if (error) {
             return <div>Error! {error.message}</div>;
         }
