@@ -11,7 +11,6 @@ import rootReducer from './rootReducer'
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(ReduxThunk)));
 
-
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

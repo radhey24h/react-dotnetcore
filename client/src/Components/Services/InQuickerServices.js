@@ -15,12 +15,13 @@ class InQuickerServices extends Component {
     }
 
     handleClick(event) {
-        //console.log(event)
+        console.log(event)
     }
 
     render() {
 
         const { error, loading, quickerServices } = this.props;
+        //console.log(this.props)
 
         if (error) {
             return <div>Error! {error.message}</div>;
@@ -39,14 +40,14 @@ class InQuickerServices extends Component {
                 <div className="sidebar" >
                     <h2 className="heading"> Quicker Services </h2>
                     <List disablePadding dense > {
-                        // quickerServices.map(item =>
-                        //     <ListItem button onClick={this.handleClick.bind(this)} key={Math.random()} >
-                        //         <ListItemIcon >
-                        //             <IconDashboard />
-                        //         </ListItemIcon>
-                        //         <ListItemText primary={item.id} />
-                        //     </ListItem>
-                        // )
+                        quickerServices.map(item =>
+                            <ListItem button onClick={this.handleClick.bind(this)} key={Math.random()} >
+                                <ListItemIcon >
+                                    <IconDashboard />
+                                </ListItemIcon>
+                                <ListItemText primary={item.id} />
+                            </ListItem>
+                        )
                     }
                     </List>
                 </div>
@@ -57,10 +58,12 @@ class InQuickerServices extends Component {
         </>)
     }
 }
+
+
 const mapStateToProps = state => ({
-    quickerServices: state.quickerServices.items,
-    loading: state.quickerServices.loading,
-    error: state.quickerServices.error
+    quickerServices: state.services.items,
+    loading: state.services.loading,
+    error: state.services.error
 });
 
 export default connect(mapStateToProps)(InQuickerServices);
