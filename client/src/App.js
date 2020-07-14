@@ -1,14 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Navbar from './components/common/Navbar';
-import { InQuickerServices } from "./components/Services/InQuickerServices";
-import { InQuickerProviders } from "./components/Services/InQuickerProviders";
+import Navbar from './Components/Common/Navbar';
+import InQuickerServices from "./Components/Services/InQuickerServices";
+import { InQuickerProviders } from "./Components/Services/InQuickerProviders";
+import ProductList from "./Components/Products/ProductList";
 import './App.css';
 
 const App = () => (
   <Router>
+    {/* <ProductList /> */}
+    <InQuickerServices />
     <Navbar />
-    <Route exact path="/" component={InQuickerServices} />
+    {/* <Route exact path="/" component={InQuickerServices} /> */}
     <Route path="/quickerproviders" component={InQuickerProviders} />
   </Router>
 
