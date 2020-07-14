@@ -1,9 +1,4 @@
 import React, { Component } from 'react'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
-import IconDashboard from '@material-ui/icons/Dashboard'
 
 export class InQuickerProviders extends Component {
     constructor() {
@@ -30,19 +25,13 @@ export class InQuickerProviders extends Component {
     }
 
     render() {
-        const quickerStagingDetails = () => {
-            return <h2 className="heading">Provider Details</h2>
-        }
-
         return (<>
-
             <h2 className="heading"> Quicker Provider </h2>
-
-            <div disablePadding dense > {
+            <div> {
                 this.state.inquickerstaging.map(item =>
                     <div className="provider-grid" key={Math.random()}>
                         <div className="provider-img">
-                            <img src={item.attributes['card-image']} />
+                            <img alt={item.attributes['card-image']} src={item.attributes['card-image']} />
                         </div>
 
                         <div className="provider-content">

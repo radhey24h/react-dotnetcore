@@ -14,8 +14,8 @@ class InQuickerServices extends Component {
         this.props.dispatch(fetchInquickerServices());
     }
 
-    handleClick(event) {
-        console.log(event)
+    handleClick() {
+        console.log()
     }
 
     render() {
@@ -39,7 +39,7 @@ class InQuickerServices extends Component {
                     <h2 className="heading"> Quicker Services </h2>
                     <List disablePadding dense > {
                         quickerServices.map(item =>
-                            <ListItem button onClick={this.handleClick.bind(this)} key={Math.random()} >
+                            <ListItem button onClick={this.handleClick} key={Math.random()} >
                                 <ListItemIcon >
                                     <IconDashboard />
                                 </ListItemIcon>
