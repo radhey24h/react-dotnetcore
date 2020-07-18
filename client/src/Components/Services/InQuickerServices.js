@@ -42,9 +42,9 @@ class InQuickerServices extends Component {
         const quickerStagingDetails = () => {
             return <><h2 className="heading">Services Details</h2>
                 {this.state.showComponent ?
-                    <>  <div className="">{this.state.selectedService.id}</div>
-                        <div className="">{this.state.selectedService.type}</div>
-                        <div className="">{this.state.selectedService.links.self}</div>
+                    <>  <div className="content">{this.state.selectedService.id}</div>
+                        <div className="content">{this.state.selectedService.type}</div>
+                        <div className="content">{this.state.selectedService.links.self}</div>
                     </>
                     :
                     null
