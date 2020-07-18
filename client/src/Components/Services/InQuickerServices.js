@@ -5,7 +5,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import IconDashboard from '@material-ui/icons/Dashboard'
 import { connect } from 'react-redux'
-import { fetchInquickerServices, fetchSelectedService } from '../../Services/servicesActions'
+import { fetchInquickerServices } from '../../Services/servicesActions'
 
 class InQuickerServices extends Component {
 
@@ -15,9 +15,9 @@ class InQuickerServices extends Component {
     }
 
     handleClick(item) {
-        //need to impliment one more action and reducer 
+        //need to populate the data
         console.log(item)
-        this.props.dispatch(fetchSelectedService(item));
+        
     }
 
     render() {

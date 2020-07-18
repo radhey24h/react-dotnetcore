@@ -1,5 +1,4 @@
 import {
-  FETCH_SELECTEDSERVICES,
   FETCH_INQUICKERSERVICES_BEGIN,
   FETCH_INQUICKERSERVICES_SUCCESS,
   FETCH_INQUICKERSERVICES_FAILURE
@@ -42,14 +41,6 @@ export default function servicesReducer(state = initialState, action) {
         loading: false,
         error: action.payload.error,
         items: []
-      };
-
-    //just acessing the selected data
-    case FETCH_SELECTEDSERVICES:
-      return {
-        ...state,
-        loading: false,
-        items: action.payload.quickerServices
       };
 
     default:
