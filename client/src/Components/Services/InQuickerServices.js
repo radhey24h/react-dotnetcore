@@ -5,7 +5,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import IconDashboard from '@material-ui/icons/Dashboard'
 import { connect } from 'react-redux'
-import { fetchInquickerServices } from '../../Services/servicesActions'
+import { fetchInquickerServices, fetchSelectedService } from '../../Services/servicesActions'
 
 class InQuickerServices extends Component {
 
@@ -14,14 +14,15 @@ class InQuickerServices extends Component {
         this.props.dispatch(fetchInquickerServices());
     }
 
-    handleClick() {
+    handleClick(item) {
         //need to impliment one more action and reducer 
-        console.log()
+        console.log(item)
+        this.props.dispatch(fetchSelectedService(item));
     }
 
     render() {
         const { error, loading, quickerServices } = this.props;
-        
+
         if (error) {
             return <div>Error! {error.message}</div>;
         }
@@ -40,7 +41,7 @@ class InQuickerServices extends Component {
                     <h2 className="heading"> Quicker Services </h2>
                     <List disablePadding dense > {
                         quickerServices.map(item =>
-                            <ListItem button onClick={this.handleClick} key={Math.random()} >
+                            <ListItem button onClick={() => this.handleClick(item)} key={Math.random()} >
                                 <ListItemIcon >
                                     <IconDashboard />
                                 </ListItemIcon>

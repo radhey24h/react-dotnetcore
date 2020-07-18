@@ -32,10 +32,16 @@ export function fetchInquickerServices() {
   };
 }
 
+export const FETCH_SELECTEDSERVICES = "FETCH_SELECTEDSERVICES";
 
 export const FETCH_INQUICKERSERVICES_BEGIN = "FETCH_INQUICKERSERVICES_BEGIN";
 export const FETCH_INQUICKERSERVICES_SUCCESS = "FETCH_INQUICKERSERVICES_SUCCESS";
 export const FETCH_INQUICKERSERVICES_FAILURE = "FETCH_INQUICKERSERVICES_FAILURE";
+
+export const fetchSelectedService = (item) => ({
+  type: FETCH_SELECTEDSERVICES,
+  payload:item
+});
 
 export const fetchInquickerServicesBegin = () => ({
   type: FETCH_INQUICKERSERVICES_BEGIN
