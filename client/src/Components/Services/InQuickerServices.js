@@ -8,16 +8,24 @@ import { connect } from 'react-redux'
 import { fetchInquickerServices } from '../../Services/servicesActions'
 
 class InQuickerServices extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedService: null,
+            showComponent: false
+        };
+    }
     componentDidMount() {
         // GET request using fetch with async/await
         this.props.dispatch(fetchInquickerServices());
     }
 
     handleClick(item) {
-        //need to populate the data
-        console.log(item)
-        
+        this.setState({
+            selectedService: item,
+            showComponent: true
+        });
+        //return <div>{item.id}</div>
     }
 
     render() {
@@ -32,7 +40,16 @@ class InQuickerServices extends Component {
         }
 
         const quickerStagingDetails = () => {
-            return <h2 className="heading">Services Details</h2>
+            return <><h2 className="heading">Services Details</h2>
+                {this.state.showComponent ?
+                    <>  <div className="">{this.state.selectedService.id}</div>
+                        <div className="">{this.state.selectedService.type}</div>
+                        <div className="">{this.state.selectedService.links.self}</div>
+                    </>
+                    :
+                    null
+                }
+            </>
         }
 
         return (<>
